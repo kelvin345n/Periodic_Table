@@ -1,0 +1,47 @@
+{% load static %}
+<link rel="stylesheet" href="{ % static 'description.css' % }">
+
+<style>
+    *{
+        margin:0;
+        background-color: black;
+    }
+    .title{
+        font-size: 70px;
+        color: white;
+    }
+    .names{
+        color: {{elements.hex_color}};
+    }
+    a:visited { text-decoration: none; color:white; }
+    a:hover { text-decoration: none; color:red; }
+</style>
+<title>{{elements.name}}</title>
+<center><h class="title"><a href="{% url 'home' %}" style="text-decoration: none">Periodic Table</a></h>
+
+<br><br>
+
+<div class="names">
+    <h2>{{elements.name}}</h2> <br>
+
+
+    <div class="names">
+        Atomic number: {{elements.atomic_number}} <br>
+        Symbol: {{elements.symbol}}<br>
+        Atomic mass: {{elements.atomic_mass}}<br>
+        Electron Configuration: {{elements.electron_config}}<br>
+        Electronegativity: {{elements.electronegativity}}<br>
+        Atomic Radius: {{elements.atomic_radius}}<br>
+        Ionization Energy: {{elements.ionization_energy}} <br>
+        Electron Affinity: {{elements.electron_affinity}}<br>
+        Oxidation States: {{elements.oxidation_states}}<br>
+        Standard State: {{elements.standard_state}}<br>
+        Melting Point: {{elements.melting_point}}<br>
+        Boiling Point: {{elements.boiling_point}} <br>
+        Density: {{elements.density}} <br>
+        Group Block: {{elements.group_block}} <br>
+        Year Discovered: {{elements.year_discovered}}</div>
+
+
+</div>
+</center>

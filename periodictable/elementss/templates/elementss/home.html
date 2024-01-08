@@ -1,0 +1,187 @@
+<style>
+    *{
+        margin:0;
+        background-color: black;
+    }
+    .title{
+        font-size: 70px;
+        color: white;
+    }
+    td{
+        color: white;
+        text-align: center;
+        width: 5vw; /* pixel(px) = (viewport width unit(vw) * viewport width)/100 */
+        border: 1px solid red;
+        font-weight: 700;
+        size: 12px;
+    }
+    .nonmetal{
+        color: red;
+    }
+    a:link { color: white; text-decoration: none; }
+    a:visited { text-decoration: none; color:white; }
+    a:hover { text-decoration: none; color:red; }
+    a:focus { text-decoration: none; color:white; }
+    a:hover, a:active { text-decoration: none; color:red }
+
+    .none{
+        border: none;
+    }
+
+</style>
+<title>The Periodic Table</title>
+<center><h class="title"><a href="{% url 'home' %}" style="text-decoration: none" >Periodic Table</a></h></center>
+
+<center>
+<br><br>
+<table>
+    <tr>
+    {% for element in elements %}
+        {% if element.atomic_number in '1' %}
+
+            <td ><a href="{% url 'description' element.name %}" style="text-decoration: none" >{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+            <td colspan="16" class="none"></td>
+        {% elif element.atomic_number in '2' %}
+
+            <td ><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+        {% endif %}
+    {% endfor %}
+    </tr>
+
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number in '3' or element.atomic_number in '4'%}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+            <td colspan="10" class="none"></td>
+
+            {% for element in elements %}
+                {% if element.atomic_number in '5' or element.atomic_number in '6' or element.atomic_number in '7' or element.atomic_number in '8' or element.atomic_number in '9' or element.atomic_number == '10'%}
+
+                    <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+                {% endif %}
+            {% endfor %}
+    </tr>
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number == '11' or element.atomic_number == '12' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+         {% endfor %}
+        <td colspan="10" class="none"></td>
+
+        {% for element in elements %}
+            {% if element.atomic_number == '13' or element.atomic_number == '14' or element.atomic_number == '15' or element.atomic_number == '16' or element.atomic_number == '17' or element.atomic_number == '18' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number == '19' or element.atomic_number == '20' or element.atomic_number == '21' or element.atomic_number == '22' or element.atomic_number == '23' or element.atomic_number == '24' or element.atomic_number == '25' or element.atomic_number == '26' or element.atomic_number == '27' or element.atomic_number == '28' or element.atomic_number == '29' or element.atomic_number == '30' or element.atomic_number == '31' or element.atomic_number == '32' or element.atomic_number == '33' or element.atomic_number == '34' or element.atomic_number == '35' or element.atomic_number == '36'%}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number == '37' or element.atomic_number == '38' or element.atomic_number == '39' or element.atomic_number == '40' or element.atomic_number == '41' or element.atomic_number == '42' or element.atomic_number == '43' or element.atomic_number == '44' or element.atomic_number == '45' or element.atomic_number == '46' or element.atomic_number == '47' or element.atomic_number == '48' or element.atomic_number == '49' or element.atomic_number == '50' or element.atomic_number == '51' or element.atomic_number == '52' or element.atomic_number == '53' or element.atomic_number == '54'%}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number == '55' or element.atomic_number == '56' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+        <td>57-71<br>&nbsp;</td>
+        {% for element in elements %}
+            {% if element.atomic_number == '72' or element.atomic_number == '73' or element.atomic_number == '74' or element.atomic_number == '75' or element.atomic_number == '76' or element.atomic_number == '77' or element.atomic_number == '78' or element.atomic_number == '79' or element.atomic_number == '80' or element.atomic_number == '81' or element.atomic_number == '82' or element.atomic_number == '83' or element.atomic_number == '84' or element.atomic_number == '85' or element.atomic_number == '86' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+    <tr>
+        {% for element in elements %}
+            {% if element.atomic_number == '87' or element.atomic_number == '88' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+        <td>89-103<br>&nbsp;</td>
+        {% for element in elements %}
+            {% if element.atomic_number == '104' or element.atomic_number == '105' or element.atomic_number == '106' or element.atomic_number == '107' or element.atomic_number == '108' or element.atomic_number == '109' or element.atomic_number == '110' or element.atomic_number == '111' or element.atomic_number == '112' or element.atomic_number == '113' or element.atomic_number == '114' or element.atomic_number == '115' or element.atomic_number == '116' or element.atomic_number == '117' or element.atomic_number == '118' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+    <tr><td class="none"></td></tr>
+    <tr>
+        <td colspan="2" rowspan="2" class="none"></td>
+        {% for element in elements %}
+            {% if element.atomic_number == '57' or element.atomic_number == '58' or element.atomic_number == '59' or element.atomic_number == '60' or element.atomic_number == '61' or element.atomic_number == '62' or element.atomic_number == '63' or element.atomic_number == '64' or element.atomic_number == '65' or element.atomic_number == '66' or element.atomic_number == '67' or element.atomic_number == '68' or element.atomic_number == '69' or element.atomic_number == '70' or element.atomic_number == '71' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+        <td colspan="1" rowspan="1" class="none"></td>
+    </tr>
+    <tr>
+
+        {% for element in elements %}
+            {% if element.atomic_number == '89' or element.atomic_number == '90' or element.atomic_number == '91' or element.atomic_number == '92' or element.atomic_number == '93' or element.atomic_number == '94' or element.atomic_number == '95' or element.atomic_number == '96' or element.atomic_number == '97' or element.atomic_number == '98' or element.atomic_number == '99' or element.atomic_number == '100' or element.atomic_number == '101' or element.atomic_number == '102' or element.atomic_number == '103' %}
+
+                <td><a href="{% url 'description' element.name %}" style="text-decoration: none">{{element.atomic_number}}<br>{{element.symbol}}</a></td>
+
+            {% endif %}
+        {% endfor %}
+    </tr>
+</table>
+</center>
+
+
+
+
+<div class="nonmetal"></div>
+
+<div class="noble_gas"></div>
+
+<div class="alkali"></div>
+
+<div class="alkaline"></div>
+
+<div class="metalloid"></div>
+
+<div class="halogen"></div>
+
+<div class="post_transition"></div>
+
+<div class="transition"></div>
+
+<div class="lanthanide"></div>
+
+<div class="actinide"></div>
+
